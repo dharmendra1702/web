@@ -1,0 +1,95 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.parent{
+    border: 38px 
+    justify-content: space-between;
+}
+.div2 ul{
+    list-style-type: none;
+    display: flex;
+    padding-left: 80px;
+    color: black;
+}
+.div2 ul li{
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: -15px;
+    color: black;
+}
+.logo{
+    background-image: url(dr.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    margin-bottom: -80px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.li{
+    font-size: 20px;
+    text-decoration: none;
+    font-family: cursive;
+}
+.navg{
+    color: black;
+}
+.search{
+    margin-left: 1040px;
+    margin-top: -20px;
+    margin-bottom: -5px;
+}
+body{
+    border: 0cm;
+    margin: 0px;
+    max-height: max-content;
+    max-width:max-content;
+    background-image: url(back.webp);
+}
+.content{
+    list-style-type: none;
+    margin-top: 100px;
+}
+.li1{
+    font-size: 55px;
+    padding-left: 250px;
+    margin-left: -165px;
+}
+.li2{
+    font-size: 25px;
+    padding-left: 85px;
+    margin-left: 1px;
+}
+.li3{
+    font-size: 25px;
+    padding-left: 86px;
+}
+.li4{
+    font-size: 26px;
+    padding-left: 70px;
+    margin-left: 15px;
+}
+.name{
+    color: rgb(248, 143, 16);
+}
+.img{
+    border: 10px;
+    margin: 20px;
+    height: 400px;
+    width: 402px;
+    margin-top: -310px;
+    margin-left: 700px;
+}
+.skill{
+    font-size: 55px;
+    padding-left: 250px;
+    margin-left: -165px;
+}
+.html{
+    margin-left: 70px;
+}
+.css{
+    margin-left: -15px;
+}
