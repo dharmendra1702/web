@@ -51,7 +51,7 @@ export default function Header() {
 
     {/* Animated underline */}
     <span
-      className={`absolute left-0 -bottom-2 h-[2px] bg-white transition-all duration-300 ${
+      className={`absolute left-0 -bottom-2 h-0.5 bg-white transition-all duration-300 ${
         active === id ? "w-full" : "w-0"
       }`}
     />
@@ -75,7 +75,7 @@ export default function Header() {
               src="/dws.png"
               alt="DWS Logo"
               className="
-                w-[56px] sm:w-[70px] md:w-[88px] lg:w-[104px]
+                w-14 sm:w-17.5 md:w-22 lg:w-26
                 transition-all duration-300
                 hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]
               "
@@ -102,7 +102,7 @@ export default function Header() {
 
       {/* MOBILE MENU */}
       <div
-        className={`fixed inset-0 z-[60] bg-black/90 backdrop-blur-2xl transition-all duration-500 ${
+        className={`fixed inset-0 z-60 bg-black/90 backdrop-blur-2xl transition-all duration-500 ${
           open ? "opacity-100 scale-100" : "opacity-0 scale-95 pointer-events-none"
         }`}
       >
