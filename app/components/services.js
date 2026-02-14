@@ -1,6 +1,6 @@
 export default function Services() {
   return (
-    <section className="py-24 text-center">
+    <section className="py-5 pt-2 color text-center">
 
 <h2 className="text-3xl font-bold mb-12">Our Services</h2>
 

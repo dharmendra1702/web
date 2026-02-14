@@ -46,27 +46,28 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-black text-gray-300 pt-20">
+    <footer className="relative bg-black text-gray-300 pt-6 pb-4">
 
       <div className="absolute inset-0 bg-white/5 backdrop-blur-xl -z-10"/>
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6 text-center items-start">
 
         {/* BRAND */}
-        <div>
-          <img
-              src="/dws.png"
-              alt="DWS Logo"
-              className="
-                w-14 sm:w-17.5 md:w-22 lg:w-26
-                transition-all duration-300
-                hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]
-              "
-            />
+        <div className="flex flex-col items-center md:items-start text-center md:text-left">
 
-          <p className="text-sm text-gray-400">
-            Premium websites for growing businesses.
-          </p>
+  <img
+    src="/dws.png"
+    alt="DWS Logo"
+    className="
+      w-22.5 sm:w-30 md:w-35 lg:w-42.5
+      transition-all duration-300
+      hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]
+    "
+  />
+
+  <p className="text-sm text-gray-400 mt-3 max-w-xs">
+    Premium websites for growing businesses.
+  </p>
 
           {/* SOCIAL ICONS */}
           <div className="flex gap-4 mt-6">
@@ -160,9 +161,9 @@ className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center h
 
       </div>
 
-      <div className="border-t border-white/10 mt-16"/>
+      <div className="border-t border-white/10 mt-4"/>
 
-      <div className="text-center text-sm text-gray-500 py-6">
+      <div className="text-center text-sm text-gray-500 py-2">
         © {new Date().getFullYear()} Dharma Web Services
       </div>
 

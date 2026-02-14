@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function Stats() {
   return (
-    <section className="py-20 text-center bg-black">
+    <section className="py-3 text-center bg-black">
   <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
 
     <div>

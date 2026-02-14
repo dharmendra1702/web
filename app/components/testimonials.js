@@ -1,6 +1,6 @@
 export default function Testimonials() {
   return (
-    <section className="py-24 text-center bg-white/5">
+    <section className="py-10 text-center bg-white/5">
 
 <h2 className="text-3xl font-bold mb-12">What Clients Say</h2>
 

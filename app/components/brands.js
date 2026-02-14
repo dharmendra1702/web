@@ -1,6 +1,6 @@
 export default function Brands() {
   return (
-    <section id="brands" className="py-24 bg-white text-black text-center overflow-hidden">
+    <section id="brands" className="py-4 bg-white text-black text-center overflow-hidden">
 
 <h2 className="text-3xl font-bold mb-12">
 Built Using Trusted Global Technologies

@@ -23,7 +23,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="pricing" className="pt-40 pb-24 px-6 text-center">
+    <section id="pricing" className="pt-20 pb-24 px-6 text-center py-3">
 
       <h2 className="text-3xl font-bold mb-12 reveal">Pricing</h2>
 
