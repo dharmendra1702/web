@@ -13,13 +13,18 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Dharma Web Services | Professional Website Development",
-  description: "Affordable professional websites starting at ₹2499. Contact Dharma Web Services for premium web design.",
+  description:
+    "Affordable professional websites starting at ₹2499. Contact Dharma Web Services for premium web design.",
 };
+
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+  <html lang="en">
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      {children}
+    </body>
+  </html>
+);
+
 }
