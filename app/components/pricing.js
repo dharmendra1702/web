@@ -4,72 +4,117 @@ import { useEffect } from "react";
 import useTilt from "./useTilt";
 
 export default function Pricing() {
-
   const { handleTilt, resetTilt } = useTilt();
 
-  // Scroll Reveal
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
-
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add("active");
-        }
-      });
+      entries.forEach(e => e.isIntersecting && e.target.classList.add("active"));
     });
-
     els.forEach(el => observer.observe(el));
   }, []);
 
   return (
-    <section id="pricing" className="pt-20 pb-24 px-6 text-center py-3">
+    <section
+      id="pricing"
+      className="relative pt-40 pb-32 px-6 text-center overflow-visible"    >
 
-      <h2 className="text-3xl font-bold mb-12 reveal">Pricing</h2>
+      {/* Background glow */}
+      <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-900/30 via-black to-blue-900/30"></div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-10 max-w-5xl mx-auto">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 reveal">
+        Simple, Transparent Pricing
+      </h2>
 
-        {/* STANDARD */}
-        <div
-          onMouseMove={handleTilt}
-          onMouseLeave={resetTilt}
-          className="tilt-card glow-card bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 sm:p-10 w-full md:w-72 text-center transition duration-300 shadow-xl reveal"
-        >
+      <p className="text-gray-400 max-w-xl mx-auto mb-16 reveal">
+        Choose a plan that fits your business. No hidden charges. One-time payment.
+      </p>
 
-          <h3 className="text-xl font-semibold">Standard Website</h3>
-          <p className="text-4xl font-bold mt-4">₹2999</p>
+      <div className="flex flex-col lg:flex-row justify-center gap-10 max-w-6xl mx-auto overflow-visible">
 
-          <ul className="text-gray-400 mt-6 space-y-2 text-sm">
-            <li>✔ Professional Design</li>
-            <li>✔ Mobile Responsive</li>
-            <li>✔ Contact Form</li>
-            <li>✔ Free Hosting</li>
-          </ul>
+        {/* STARTER */}
+        <Card
+          title="Starter"
+          price="₹2999"
+          features={[
+            "1–3 Pages Website",
+            "Mobile Responsive",
+            "Contact Form",
+            "Basic SEO",
+            "Free Hosting Setup",
+          ]}
+          tilt={{ handleTilt, resetTilt }}
+        />
 
-        </div>
+        {/* PRO */}
+        <Card
+          popular
+          title="Pro"
+          price="₹5999"
+          features={[
+            "Up to 6 Pages",
+            "Animations + UI Effects",
+            "WhatsApp Integration",
+            "Advanced SEO",
+            "Priority Support",
+          ]}
+          tilt={{ handleTilt, resetTilt }}
+        />
 
-        {/* EARLY BIRD */}
-        <div
-          onMouseMove={handleTilt}
-          onMouseLeave={resetTilt}
-          className="tilt-card glow-card bg-linear-to-br from-purple-600/30 to-blue-600/30 backdrop-blur-xl border border-purple-500 rounded-2xl p-8 sm:p-10 w-full md:w-72 text-center transition duration-300 shadow-xl reveal"
-        >
-
-          <h3 className="text-xl font-semibold">Early Bird Offer</h3>
-          <p className="text-4xl font-bold mt-4">₹2499</p>
-
-          <p className="text-sm text-gray-300 mt-2">First 10 Clients Only</p>
-
-          <ul className="text-gray-300 mt-6 space-y-2 text-sm">
-            <li>✔ Everything in Standard</li>
-            <li>✔ Priority Support</li>
-            <li>✔ Free Minor Changes</li>
-          </ul>
-
-        </div>
+        {/* BUSINESS */}
+        <Card
+          title="Business"
+          price="₹9999"
+          features={[
+            "Unlimited Pages",
+            "Admin Panel",
+            "Performance Optimization",
+            "Google Analytics",
+            "1 Month Free Support",
+          ]}
+          tilt={{ handleTilt, resetTilt }}
+        />
 
       </div>
-
     </section>
+  );
+}
+
+/* Card Component */
+function Card({ title, price, features, popular, tilt }) {
+  return (
+    <div
+      onMouseMove={tilt.handleTilt}
+      onMouseLeave={tilt.resetTilt}
+      className={`tilt-card glow-card relative bg-white/5 backdrop-blur-xl border rounded-3xl p-10 w-full max-w-sm mx-auto shadow-2xl transition duration-300 reveal overflow-visible
+        ${popular ? "border-purple-500 scale-105 shadow-purple-500/30 shadow-2xl" : "border-white/10"}
+      `}
+    >
+
+      {popular && (
+        <div className="absolute left-1/2 top-3 -translate-x-1/2 -translate-y-1/2 px-5 py-1.5 text-xs font-semibold rounded-full bg-linear-to-r from-purple-600 to-blue-600 shadow-xl">
+          MOST POPULAR
+        </div>
+      )}
+
+
+
+      <h3 className="text-2xl font-semibold mb-4">{title}</h3>
+
+      <p className="text-5xl font-bold mb-6">{price}</p>
+
+      <ul className="text-gray-300 space-y-3 text-sm mb-8">
+        {features.map((f, i) => (
+          <li key={i}>✔ {f}</li>
+        ))}
+      </ul>
+
+      <a
+        href="#contact"
+        className="inline-block w-full py-3 rounded-xl bg-linear-to-r from-purple-600 to-blue-600 font-semibold hover:opacity-90 transition"
+      >
+        Get Started
+      </a>
+    </div>
   );
 }

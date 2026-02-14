@@ -10,6 +10,12 @@ import Brands from "./components/brands";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 import ScrollProgress from "./components/scrollprogress";
+import Portfolio from "./components/portfolio";
+import WhyChoose from "./components/whychoose";
+import Process from "./components/process";
+import FAQ from "./components/faq";
+
+
 
 export default function Home() {
   return (
@@ -22,12 +28,14 @@ export default function Home() {
       <Stats />
       <Pricing />
       <Services />
+      <WhyChoose />
+      <Process />
+      <Portfolio />
       <Testimonials />
       <Brands />
+      <FAQ />
       <Contact />
       <Footer />
-
-
     </main>
   );
 }

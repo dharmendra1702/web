@@ -1,34 +1,70 @@
+"use client";
+
+import { useEffect } from "react";
+
+const reviews = [
+  {
+    name: "Rahul Kumar",
+    role: "Startup Founder",
+    text: "DWS delivered exactly what I needed. Clean design and fast delivery.",
+  },
+  {
+    name: "Sneha Reddy",
+    role: "Business Owner",
+    text: "Very professional team. My website looks premium and works perfectly.",
+  },
+  {
+    name: "Arjun Patel",
+    role: "Freelancer",
+    text: "Affordable pricing with great quality. Highly recommended.",
+  },
+];
+
 export default function Testimonials() {
+  useEffect(() => {
+    const els = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting && e.target.classList.add("active"));
+    });
+    els.forEach(el => observer.observe(el));
+  }, []);
+
   return (
-    <section className="py-10 text-center bg-white/5">
+    <section className="relative py-32 px-6">
 
-<h2 className="text-3xl font-bold mb-12">What Clients Say</h2>
+      <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-900/20 via-black to-blue-900/20"></div>
 
-<div className="flex justify-center gap-8 flex-wrap">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal">
+        What Our Clients Say
+      </h2>
 
-<div className="bg-black border border-white/10 p-6 rounded-xl w-72">
-<p className="text-gray-400 text-sm">
-“Professional design and fast delivery. Highly recommended.”
-</p>
-<h4 className="mt-4 font-semibold">— Local Business Owner</h4>
-</div>
+      <p className="text-gray-400 text-center max-w-xl mx-auto mb-16 reveal">
+        Trusted by startups and small businesses.
+      </p>
 
-<div className="bg-black border border-white/10 p-6 rounded-xl w-72">
-<p className="text-gray-400 text-sm">
-“Affordable pricing with premium quality website.”
-</p>
-<h4 className="mt-4 font-semibold">— Startup Founder</h4>
-</div>
+      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
-<div className="bg-black border border-white/10 p-6 rounded-xl w-72">
-<p className="text-gray-400 text-sm">
-“DWS gave my brand an online presence quickly.”
-</p>
-<h4 className="mt-4 font-semibold">— Entrepreneur</h4>
-</div>
+        {reviews.map((r, i) => (
+          <div
+            key={i}
+            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 reveal hover:border-purple-500/60 transition"
+          >
+            <p className="text-gray-300 text-sm mb-6">“{r.text}”</p>
 
-</div>
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-linear-to-r from-purple-600 to-blue-600 flex items-center justify-center font-bold">
+                {r.name.charAt(0)}
+              </div>
 
-</section>
+              <div>
+                <h4 className="font-semibold">{r.name}</h4>
+                <span className="text-xs text-gray-400">{r.role}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </section>
   );
 }

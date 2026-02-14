@@ -119,6 +119,8 @@ export default function Header() {
           <a onClick={() => setOpen(false)} href="#contact" className="hover:scale-110 transition">Contact</a>
         </div>
       </div>
+        
     </>
   );
+  
 }
