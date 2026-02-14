@@ -54,7 +54,15 @@ export default function Footer() {
 
         {/* BRAND */}
         <div>
-          <img src="/dws.png" className="h-12 mb-4"/>
+          <img
+              src="/dws.png"
+              alt="DWS Logo"
+              className="
+                w-14 sm:w-17.5 md:w-22 lg:w-26
+                transition-all duration-300
+                hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]
+              "
+            />
 
           <p className="text-sm text-gray-400">
             Premium websites for growing businesses.
