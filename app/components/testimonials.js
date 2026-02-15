@@ -42,20 +42,24 @@ export default function Testimonials() {
         What Our Clients Say
       </h2>
 
-      <p className="text-gray-400 max-w-xl mx-auto mb-3 reveal">
+      <p className="text-gray-400 max-w-xl mx-auto mb-6 reveal">
         Trusted by startups and small businesses.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-10 max-w-6xl mx-auto">
 
         {reviews.map((r, i) => (
           <div
             key={i}
             style={{ transitionDelay: `${i * 120}ms` }}
-            className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-left
-            reveal translate-y-10 opacity-0
-            hover:border-purple-500/60 hover:-translate-y-2 transition-all duration-500"
-
+            className="
+              group relative bg-white/5 backdrop-blur-xl border border-white/10
+              rounded-3xl p-8 text-left
+              reveal opacity-0
+              transition-all duration-500
+              md:hover:-translate-y-2
+              hover:border-purple-500/60
+            "
           >
             {/* Glow */}
             <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition"></div>
@@ -87,6 +91,18 @@ export default function Testimonials() {
         ))}
 
       </div>
+
+      {/* Reveal Animation */}
+      <style>{`
+        .reveal {
+          transform: translateY(20px);
+        }
+
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
 
     </section>
   );

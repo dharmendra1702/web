@@ -122,13 +122,15 @@ function Card({ title, price, original, offer, features, popular, tilt, onClick 
 
         {/* FORCE Gradient Button */}
         <button
-          onClick={onClick}
-          style={{ background: "linear-gradient(90deg,#9333ea,#6366f1,#3b82f6)" }
-          }
-          className="relative w-full py-4 rounded-full text-white text-lg font-semibold transition active:scale-95 hover:brightness-110"
-        >
-          Get Started
-        </button>
+  onClick={onClick}
+  style={{ background: "linear-gradient(90deg,#9333ea,#6366f1,#3b82f6)" }}
+  className="relative w-64 md:w-72 h-12 md:h-14 px-6 flex items-center justify-center rounded-full text-white text-base font-semibold transition active:scale-95 hover:brightness-110 shadow-none"
+
+>
+  Get Started
+</button>
+
+
       </div>
 
     </div>
