@@ -30,7 +30,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-5 px-6">
+    <section className="py-5 pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal">
         What Our Clients Say

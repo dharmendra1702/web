@@ -32,7 +32,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-10 text-center">
+    <section id="contact" className="py-10 text-center pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
 
       <h2 className="text-3xl font-bold mb-3">Contact Dharma Web Services</h2>
 

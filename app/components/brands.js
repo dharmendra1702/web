@@ -1,6 +1,6 @@
 export default function Brands() {
   return (
-    <section id="brands" className="py-4 bg-white text-black text-center overflow-hidden">
+    <section id="brands" className="py-4 bg-white text-black text-center pb-10 px-4 md:px-6 overflow-hidden -mt-24 md:mt-0">
 
 <h2 className="text-3xl font-bold mb-12 text-white">
 Trusted Brands

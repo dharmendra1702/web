@@ -17,7 +17,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="pt-20 pb-20 px-6 text-center overflow-visible"    >
+      className="pt-20 text-center  pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0"    >
 
       <h2 className="text-4xl md:text-5xl font-bold mb-4 reveal">
         Simple, Transparent Pricing

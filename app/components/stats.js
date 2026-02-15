@@ -2,7 +2,7 @@
 
 export default function Stats() {
   return (
-    <section className="text-center">
+    <section className="text-center pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
       <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
 
         <div>
