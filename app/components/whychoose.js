@@ -72,6 +72,7 @@ export default function WhyChoose() {
 
       <div className="grid md:grid-cols-3 gap-3 md:gap-10 max-w-6xl mx-auto">
 
+
         {reasons.map((r, i) => {
           const Icon = r.icon;
 
@@ -80,12 +81,12 @@ export default function WhyChoose() {
 
               <div
                 className="
-                  group relative h-32 md:h-47.5
+                  group relative min-h-35 md:h-47.5
                   bg-white/5 backdrop-blur-xl
                   border border-white/10
                   rounded-2xl p-6
                   flex flex-col items-center justify-center text-center
-                  hover:-translate-y-3 transition-all duration-300
+                  md:hover:-translate-y-3 transition-all duration-300
                   hover:shadow-[0_20px_40px_rgba(139,92,246,0.35)]
                 "
               >

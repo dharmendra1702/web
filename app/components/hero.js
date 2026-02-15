@@ -39,8 +39,11 @@ export default function Hero() {
   return (
     <section
   id="home"
-  className="relative min-h-[80vh] pt-28 md:pt-32 overflow-hidden py-5"
+  className="relative min-h-[80vh] overflow-hidden px-4"
 >
+  {/* HEADER OFFSET */}
+  <div className="h-24 md:h-28"></div>
+
 
 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
 

@@ -29,7 +29,7 @@ export default function Stats() {
   return (
     <section
       ref={ref}
-      className="text-center pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0"
+      className="text-center py-10 px-4 md:px-6 overflow-hidden"
     >
       <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
 
