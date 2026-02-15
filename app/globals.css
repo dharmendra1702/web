@@ -15,13 +15,13 @@ border:1px solid #333;
 color:white;
 }
 
-/* Buttons */
 button{
-background:white;
-color:black;
-padding:12px;
-border-radius:8px;
+background: transparent;
+color: inherit;
+padding: 0;
+border-radius: 0;
 }
+
 
 /* LOGO SLIDER */
 
@@ -399,10 +399,11 @@ section {
 
 @media (max-width: 768px) {
   section {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
+
 
 .reveal {
   transform: none !important;
@@ -447,4 +448,35 @@ section {
 /* REMOVE ALL GLOBAL SECTION SPACING */
 section {
   background: transparent !important;
+}
+
+@keyframes border {
+  0% { background-position: 0% }
+  100% { background-position: 400% }
+}
+
+.animate-border {
+  background-size: 400%;
+  animation: border 6s linear infinite;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section {
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 4rem 0;
+  }
 }

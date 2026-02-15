@@ -23,19 +23,20 @@ export default function Home() {
 
       <ScrollProgress />
 
-      <Header />
-      <Hero />
-      <Stats />
-      <Pricing />
-      <Services />
-      <WhyChoose />
-      <Process />
-      <Portfolio />
-      <Testimonials />
-      <Brands />
-      <FAQ />
-      <Contact />
-      <Footer />
+
+<Hero />
+<Stats />
+<Services />
+<WhyChoose />
+<Portfolio />
+<Process />
+<Testimonials />
+<Pricing />
+<Brands />
+<FAQ />
+<Contact />
+
+
     </main>
   );
 }

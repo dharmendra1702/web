@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -37,9 +38,9 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section className="pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
+    <section className="section py-0.5 md:py-4 px-3 md:px-6">
 
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal text-white">
         Frequently Asked Questions
       </h2>
 
@@ -52,25 +53,37 @@ export default function FAQ() {
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 reveal"
+            className="bg-[#0b0f1a]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-6 reveal hover:border-purple-500/40 transition"
           >
             <button
-              className="w-full text-left flex justify-between items-center"
+              type="button"
+              className="w-full text-left flex justify-between items-center bg-transparent"
               onClick={() => setActive(active === i ? null : i)}
             >
-              <span className="font-semibold">{faq.question}</span>
-              <span className="text-purple-400">
-                {active === i ? "-" : "+"}
+              <span className="font-semibold text-white">{faq.question}</span>
+
+              <span className="text-purple-400 text-xl">
+                {active === i ? "−" : "+"}
               </span>
             </button>
 
             {active === i && (
-              <p className="text-gray-400 mt-4 text-sm">
+              <p className="text-gray-400 mt-4 text-sm leading-relaxed">
                 {faq.answer}
               </p>
             )}
           </div>
         ))}
+
+        {/* ✅ View All FAQs Button */}
+        <div className="text-center pt-8 reveal">
+          <Link
+            href="/faq"
+            className="inline-block px-8 py-3 rounded-full bg-linear-to-r from-purple-600 to-blue-600 text-white font-semibold hover:scale-105 transition"
+          >
+            View All FAQs
+          </Link>
+        </div>
 
       </div>
     </section>

@@ -32,7 +32,7 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-10 text-center pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
+    <section id="contact" className="py-10 text-center">
 
       <h2 className="text-3xl font-bold mb-3">Contact Dharma Web Services</h2>
 
@@ -97,9 +97,17 @@ export default function Contact() {
           </div>
         </div>
 
-        <button className="w-full py-3 rounded-lg font-medium bg-white text-black transition-all duration-300 hover:bg-linear-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white hover:scale-[1.02] active:scale-95">
-          Send Message
-        </button>
+        <button className="group w-full py-3 rounded-lg font-medium bg-white text-black transition-all duration-300 hover:bg-linear-to-r hover:from-purple-600 hover:to-blue-600 hover:text-white hover:scale-[1.02] active:scale-95">
+
+  <span className="relative inline-block">
+    Send Message
+
+    <span className="absolute left-0 -bottom-1 h-0.5 w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+  </span>
+
+</button>
+
+
 
       </form>
 

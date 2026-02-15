@@ -1,11 +1,15 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
+
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
@@ -19,44 +23,49 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Active section observer (only on home)
   useEffect(() => {
-  const sections = document.querySelectorAll("section[id]");
+    if (pathname !== "/") return;
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id);
-        }
-      });
-    },
-    {
-      threshold: 0.4, // section becomes active when ~40% visible
-    }
-  );
+    const sections = document.querySelectorAll("section[id]");
 
-  sections.forEach(section => observer.observe(section));
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach(section => observer.observe(section));
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
+
+  const goTo = id => {
+    setOpen(false);
+    router.push(`/#${id}`);
+  };
 
   const navItem = (id, label) => (
-  <a
-    href={`#${id}`}
-    className={`relative transition ${
-      active === id ? "text-white" : "text-gray-300 hover:text-white"
-    }`}
-  >
-    {label}
-
-    {/* Animated underline */}
-    <span
-      className={`absolute left-0 -bottom-2 h-0.5 bg-white transition-all duration-300 ${
-        active === id ? "w-full" : "w-0"
+    <button
+      onClick={() => goTo(id)}
+      className={`relative transition ${
+        active === id ? "text-white" : "text-gray-300 hover:text-white"
       }`}
-    />
-  </a>
-);
+    >
+      {label}
+
+      <span
+        className={`absolute left-0 -bottom-2 h-0.5 bg-white transition-all duration-300 ${
+          active === id ? "w-full" : "w-0"
+        }`}
+      />
+    </button>
+  );
 
   return (
     <>
@@ -68,20 +77,16 @@ export default function Header() {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center px-3 sm:px-4 md:px-6">
 
-          {/* LOGO (20% smaller + glow on hover) */}
-          <a href="#home">
+          {/* LOGO */}
+          <button onClick={() => goTo("home")}>
             <img
               src="/dws.png"
               alt="DWS Logo"
-              className="
-                w-14 sm:w-17.5 md:w-22 lg:w-26
-                transition-all duration-300
-                hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]
-              "
+              className="w-14 sm:w-17.5 md:w-22 lg:w-26 transition-all duration-300 hover:drop-shadow-[0_0_12px_rgba(99,102,241,.6)]"
             />
-          </a>
+          </button>
 
-          {/* Desktop Nav (centered vertically by items-center above) */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex gap-8 text-sm items-center">
             {navItem("home", "Home")}
             {navItem("pricing", "Pricing")}
@@ -113,14 +118,14 @@ export default function Header() {
         </button>
 
         <div className="h-full flex flex-col items-center justify-center gap-10 text-2xl font-medium text-white">
-          <a onClick={() => setOpen(false)} href="#home" className="hover:scale-110 transition">Home</a>
-          <a onClick={() => setOpen(false)} href="#pricing" className="hover:scale-110 transition">Pricing</a>
-          <a onClick={() => setOpen(false)} href="#brands" className="hover:scale-110 transition">Brands</a>
-          <a onClick={() => setOpen(false)} href="#contact" className="hover:scale-110 transition">Contact</a>
+
+          <button onClick={() => goTo("home")} className="hover:scale-110 transition">Home</button>
+          <button onClick={() => goTo("pricing")} className="hover:scale-110 transition">Pricing</button>
+          <button onClick={() => goTo("brands")} className="hover:scale-110 transition">Brands</button>
+          <button onClick={() => goTo("contact")} className="hover:scale-110 transition">Contact</button>
+
         </div>
       </div>
-        
     </>
   );
-  
 }

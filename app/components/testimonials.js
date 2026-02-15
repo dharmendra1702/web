@@ -23,20 +23,26 @@ const reviews = [
 export default function Testimonials() {
   useEffect(() => {
     const els = document.querySelectorAll(".reveal");
+
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => e.isIntersecting && e.target.classList.add("active"));
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add("active");
+        }
+      });
     });
+
     els.forEach(el => observer.observe(el));
   }, []);
 
   return (
-    <section className="py-5 pb-10 px-4 md:px-6 overflow-hidden -mt-20 md:mt-0">
+    <section className="py-12 px-4 md:px-6 overflow-hidden text-center">
 
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal">
+      <h2 className="text-4xl md:text-5xl font-bold mb-4 reveal">
         What Our Clients Say
       </h2>
 
-      <p className="text-gray-400 text-center max-w-xl mx-auto mb-16 reveal">
+      <p className="text-gray-400 max-w-xl mx-auto mb-3 reveal">
         Trusted by startups and small businesses.
       </p>
 
@@ -45,24 +51,43 @@ export default function Testimonials() {
         {reviews.map((r, i) => (
           <div
             key={i}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 reveal hover:border-purple-500/60 transition"
-          >
-            <p className="text-gray-300 text-sm mb-6">“{r.text}”</p>
+            style={{ transitionDelay: `${i * 120}ms` }}
+            className="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 text-left
+            reveal translate-y-10 opacity-0
+            hover:border-purple-500/60 hover:-translate-y-2 transition-all duration-500"
 
-            <div className="flex items-center gap-4">
-              <div className="w-10 h-10 rounded-full bg-linear-to-r from-purple-600 to-blue-600 flex items-center justify-center font-bold">
-                {r.name.charAt(0)}
+          >
+            {/* Glow */}
+            <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-purple-600/10 to-blue-600/10 opacity-0 group-hover:opacity-100 transition"></div>
+
+            {/* Quote */}
+            <div className="text-purple-400 text-3xl mb-4">"</div>
+
+            <p className="relative text-gray-300 text-sm leading-relaxed mb-8">
+              {r.text}
+            </p>
+
+            <div className="relative flex items-center gap-4">
+
+              {/* Avatar */}
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full bg-linear-to-r from-purple-600 to-blue-500 blur opacity-70"></div>
+                <div className="relative w-12 h-12 rounded-full bg-linear-to-r from-purple-600 to-blue-500 flex items-center justify-center font-bold text-white">
+                  {r.name.charAt(0)}
+                </div>
               </div>
 
               <div>
                 <h4 className="font-semibold">{r.name}</h4>
                 <span className="text-xs text-gray-400">{r.role}</span>
               </div>
+
             </div>
           </div>
         ))}
 
       </div>
+
     </section>
   );
 }

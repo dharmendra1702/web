@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Footer() {
@@ -111,9 +112,9 @@ className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center h
         <div>
           <h4 className="text-white mb-4 font-semibold">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#home">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Careers</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/careers">Careers</a></li>
           </ul>
         </div>
 
@@ -121,10 +122,10 @@ className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center h
         <div>
           <h4 className="text-white mb-4 font-semibold">Support</h4>
           <ul className="space-y-2 text-sm">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Privacy</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/terms">Terms</a></li>
+            <li><a href="/privacy">Privacy</a></li>
           </ul>
         </div>
 
@@ -134,17 +135,41 @@ className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center h
 
           <form onSubmit={handleNewsletter} className="space-y-3">
 
-            <div className="flex">
-              <input
-                name="newsletter"
-                placeholder="Enter your email"
-                className="bg-black border border-white/20 rounded-l-full px-4 py-2 w-full text-sm"
-              />
+            <div className="flex items-center border border-white/30 rounded-full overflow-hidden h-11">
 
-              <button className="bg-orange-500 px-6 rounded-r-full text-black text-sm">
-                Subscribe
-              </button>
-            </div>
+  <input
+    name="newsletter"
+    placeholder="Enter your email"
+    className="
+      flex-1
+      bg-transparent
+      px-5
+      text-sm
+      outline-none
+      text-white
+      placeholder-gray-500
+      h-full
+    "
+  />
+
+  <button
+  type="submit"
+  style={{ backgroundColor: "#ffffff", color: "#000000" }}
+  className="
+    h-full
+    px-6
+    text-sm
+    font-medium
+    hover:opacity-90
+    transition
+  "
+>
+  Subscribe
+</button>
+
+
+</div>
+
 
             {duplicate && (
               <p className="text-red-400 text-sm">
