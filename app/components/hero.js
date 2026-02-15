@@ -39,7 +39,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-40 overflow-hidden"
+      className="relative min-h-[80vh] pt-20 overflow-hidden py-5"
     >
 <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.03),transparent_70%)] pointer-events-none" />
 
@@ -54,7 +54,7 @@ export default function Hero() {
         style={{ transform: `translate(${-mouse.x}px, ${-mouse.y}px)` }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 items-center text-center md:text-left">
 
 
         {/* LEFT */}
@@ -98,7 +98,7 @@ export default function Hero() {
         <div
   onMouseMove={handleTilt}
   onMouseLeave={resetTilt}
-  className="tilt-card relative reveal group mt-16 md:mt-0 flex justify-center"
+  className="tilt-card relative reveal group mt-6 md:mt-0 flex justify-center"
 >
 
 

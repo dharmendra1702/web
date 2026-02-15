@@ -17,14 +17,18 @@ export const metadata = {
     "Affordable professional websites starting at ₹2499. Contact Dharma Web Services for premium web design.",
 };
 
-
 export default function RootLayout({ children }) {
   return (
-  <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      {children}
-    </body>
-  </html>
-);
-
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen text-white bg-fixed bg-cover bg-center`}
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('/bg.png')",
+        }}
+      >
+        {children}
+      </body>
+    </html>
+  );
 }

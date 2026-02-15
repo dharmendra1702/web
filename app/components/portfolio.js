@@ -30,9 +30,7 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <section id="work" className="relative py-32 px-6">
-
-      <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-900/20 via-black to-blue-900/20"></div>
+    <section id="work" className="py-5 px-6">
 
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 reveal">
         Our Work

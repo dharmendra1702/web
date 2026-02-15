@@ -2,8 +2,8 @@ export default function Brands() {
   return (
     <section id="brands" className="py-4 bg-white text-black text-center overflow-hidden">
 
-<h2 className="text-3xl font-bold mb-12">
-Built Using Trusted Global Technologies
+<h2 className="text-3xl font-bold mb-12 text-white">
+Trusted Brands
 </h2>
 
 <div className="relative w-full logo-wrapper">

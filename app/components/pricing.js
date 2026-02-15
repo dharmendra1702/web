@@ -17,10 +17,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative pt-40 pb-32 px-6 text-center overflow-visible"    >
-
-      {/* Background glow */}
-      <div className="absolute inset-0 -z-10 bg-linear-to-br from-purple-900/30 via-black to-blue-900/30"></div>
+      className="pt-20 pb-20 px-6 text-center overflow-visible"    >
 
       <h2 className="text-4xl md:text-5xl font-bold mb-4 reveal">
         Simple, Transparent Pricing
