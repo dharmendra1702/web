@@ -81,14 +81,14 @@ export default function Footer() {
 </a>
 
 {/* X (Twitter) */}
-<a href="https://x.com" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition hover:scale-110">
+<a href="https://x.com/DharmaServices" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition hover:scale-110">
 <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
 <path d="M18.2 2H21l-6.6 7.5L22 22h-6.3l-5-6.2L5 22H2l7-8L2 2h6.4l4.5 5.7L18.2 2z"/>
 </svg>
 </a>
 
 {/* Instagram */}
-<a href="https://instagram.com" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition hover:scale-110">
+<a href="https://www.instagram.com/dharma_web_services" target="_blank" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition hover:scale-110">
 <svg className="w-5 h-5 fill-white" viewBox="0 0 24 24">
 <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/>
 </svg>

@@ -28,10 +28,10 @@ Trusted Brands
 <a href="https://www.infosys.com" target="_blank" rel="noopener noreferrer">
 <img src="/infosys.png"/>
 </a>
-
+{/* 
 <a href="https://subiofoods.com" target="_blank" rel="noopener noreferrer">
 <img src="/Subio.png"/>
-</a>
+</a> */}
 
 <a href="https://crave-cart-82wd.onrender.com/" target="_blank" rel="noopener noreferrer">
 <img src="/cravecart.png"/>
@@ -58,9 +58,9 @@ Trusted Brands
 <img src="/infosys.png"/>
 </a>
 
-<a href="https://subiofoods.com" target="_blank" rel="noopener noreferrer">
+{/* <a href="https://subiofoods.com" target="_blank" rel="noopener noreferrer">
 <img src="/Subio.png"/>
-</a>
+</a> */}
 
 <a href="https://crave-cart-82wd.onrender.com/" target="_blank" rel="noopener noreferrer">
 <img src="/cravecart.png"/>
